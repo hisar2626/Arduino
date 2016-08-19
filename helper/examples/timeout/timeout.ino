@@ -12,19 +12,19 @@ void loop() {
   // put your main code here, to run repeatedly:
 	if(t1.istimeout())
 	{
-		_spln("5 seconds passed from t1");
+		_spln(String(t1.elapsedtime()) + "ms passed from timer1: " );
 		t1.restart();
 	}
 
 	if(t2.istimeout())
 	{
-		_spln("3 seconds passed from t2");
+		_spln(String(t2.elapsedtime()) + "ms passed from timer2: " );
 		t2.restart();
 	}
 
 	if(t3.istimeout())
 	{
-		_spln("1 second  passed from t3");
+		_spln(String(t3.elapsedtime()) + "ms passed from timer3: " );
 		t3.restart();
 	}
   

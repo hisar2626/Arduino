@@ -73,7 +73,7 @@ class elapsedtimer
     }
 	
     bool istimeout() {
-      return ((millis() - tnow) > timeoutval);
+      return ((millis() - tnow) >= timeoutval);
     }
 
   private:
