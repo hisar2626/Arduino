@@ -12,20 +12,20 @@ void loop() {
   // put your main code here, to run repeatedly:
 	if(t1.istimeout())
 	{
-	_spln("5 seconds passed from t1");
-	t1.restart();
+		_spln("5 seconds passed from t1");
+		t1.restart();
 	}
 
 	if(t2.istimeout())
 	{
-	_spln("3 seconds passed from t2");
-	t2.restart();
+		_spln("3 seconds passed from t2");
+		t2.restart();
 	}
 
 	if(t3.istimeout())
 	{
-	_spln("1 second  passed from t3");
-	t3.restart();
+		_spln("1 second  passed from t3");
+		t3.restart();
 	}
   
 }//loop
