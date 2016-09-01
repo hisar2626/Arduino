@@ -1,13 +1,13 @@
 /****************************************************************
 	@By his 15.07.2015
 	To help for programming Arduino IDE easily.
-	
+
 	TODO: Compatibility with different kind of boards
 /****************************************************************/
 #define HELPER_LIBRARY_VERSION 1.0
 
 
-//No need for Serial.println command. easily use _spln() 
+//No need for Serial.println command. easily use _spln()
 #define _sp(f_, ...) Serial.print((f_),##__VA_ARGS__)
 #define _spln(f_, ...) Serial.println((f_),##__VA_ARGS__)
 #define _sln  Serial.println("")
@@ -49,14 +49,15 @@
 //****************************************************************
 
 
+//TODO: Maybe new elapsedtimer class for micros can be written.
 
 //Creates a timer using difference of millis time
-//@restart: 	will restart timer and will signal the istimeout after
-//		 		timeoutval passed.
-//@elapsedtime: returns the how much time(ms) passed after
-//				initializing elapsedtimer.
+//@restart: 	will restart the timer. istimeout function will return
+//true if timeoutval+restart time bigger.
+//@elapsedtime: returns how many ms passed after initialization of
+//elapsedtimer.
 //@istimeout:	will return true if the time difference is bigger then
-//				timeout value which is defined when elapsedtimer created.				
+//				timeout value + elapsedtimer creation or restart time.
 class elapsedtimer
 {
   public:
@@ -67,11 +68,11 @@ class elapsedtimer
     void restart() {
       tnow = millis();
     }
-	
+
     uint32_t elapsedtime() {
       return millis() - tnow;
     }
-	
+
     bool istimeout() {
       return ((millis() - tnow) >= timeoutval);
     }
